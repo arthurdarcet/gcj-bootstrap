@@ -1,0 +1,5 @@
+#!/bin/sh
+
+BOOTSTRAP='./bootstrap'
+cp -r "$BOOTSTRAP" "$1"
+sed "s,^PROBLEM = None$,PROBLEM = '$1'," "$BOOTSTRAP/main.py" > $1/main.py

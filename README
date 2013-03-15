@@ -1,0 +1,3 @@
+Clone this repo to a contest-specific folder and run "./start A" to start the first problem
+
+The input files can be fetched from a default directory when you run A/main.py (configured in bootstrap/lib/config.py)
