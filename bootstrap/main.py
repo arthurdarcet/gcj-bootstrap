@@ -23,6 +23,7 @@ def read_array(f=str, split=None):
     return [f(i) for i in read().split(split)]
 
 def write(s):
+    sys.stderr.write('Output: ' + s + '\n')
     out_stream.write(s)
 
 def init(problem, input_size, input_id, in_file, out_file):
@@ -50,9 +51,13 @@ def init(problem, input_size, input_id, in_file, out_file):
         out_file = out_file.format(problem=problem, input_size=input_size, input_id=input_id)
         out_stream = open(out_file, 'w')
 
+def debug(*msg):
+    sys.stderr.write('Debug : ' + ''.join(msg) + '\n')
+
 if __name__ == '__main__':
     init(PROBLEM, INPUT_SIZE, INPUT_ID, INPUT_FILE, OUTPUT_FILE)
     T = read(int)
     for t in range(1,T+1):
+        debug('Solving case #', t)
         write('Case #{0}: {1}\n'.format(t, main()))
 
